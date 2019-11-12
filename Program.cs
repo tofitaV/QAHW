@@ -21,7 +21,7 @@ namespace MyApp
         
     }
 
-    public static class Emploer
+    public static class MyExtentionsMethods
     {
         public static object FirstElement(this ArrayList array)
         {
