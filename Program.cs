@@ -5,31 +5,32 @@ using System.Collections.Generic;
 
 namespace MyApp
 {
-    class Program 
+    public static class Program 
     {
         
         static void Main(string[] args)
         {
-            List<Emploer> emploers = new List<Emploer>();
-            emploers.Add(new Emploer() { Id = 1, FirstName ="Vlad", LastName = "Kobrya", Price = 1234 });
-            emploers.Add(new Emploer() { Id = 2, FirstName = "Oleg", LastName = "Kovalenko", Price = 2345 });
-            emploers.Add(new Emploer() { Id = 3, FirstName = "Antya", LastName = "Petrov", Price = 3456 });
-            emploers.Add(new Emploer() { Id = 4, FirstName = "Napoleon", LastName = "Da", Price = 523523 });
+            ArrayList arrayList = new ArrayList();
+            arrayList.AddRange(new int[] {0,1,2,3,4,5,6,7,8,9 });
 
-            var items =  emploers.Where(a=>a.Price < 10000);
-            foreach(var item in items)
-            {
-                Console.WriteLine($"Id {item.Id} FirstName {item.FirstName} LastName {item.LastName} Price {item.Price}");
-            }
+           object item = arrayList.LastElement();
+           Console.WriteLine(item);
+            object items = arrayList.FirstElement();
+            Console.WriteLine(items);
         }
         
     }
 
-    class Emploer
+    public static class Emploer
     {
-        public int Id;
-        public string FirstName;
-        public string LastName;
-        public double Price;
+        public static object FirstElement(this ArrayList array)
+        {
+            return array[0];
+        }
+
+        public static object LastElement(this ArrayList array)
+        {
+            return array[array.Count-1];
+        }
     }
 }
