@@ -1,53 +1,35 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace MyApp
 {
-    class Program : IEnumerator, IEnumerable
+    class Program 
     {
+        
         static void Main(string[] args)
         {
-            Program test = new Program();
+            List<Emploer> emploers = new List<Emploer>();
+            emploers.Add(new Emploer() { Id = 1, FirstName ="Vlad", LastName = "Kobrya", Price = 1234 });
+            emploers.Add(new Emploer() { Id = 2, FirstName = "Oleg", LastName = "Kovalenko", Price = 2345 });
+            emploers.Add(new Emploer() { Id = 3, FirstName = "Antya", LastName = "Petrov", Price = 3456 });
+            emploers.Add(new Emploer() { Id = 4, FirstName = "Napoleon", LastName = "Da", Price = 523523 });
 
-            for (int i = 0; i < arr.Length; i++)
+            var items =  emploers.Where(a=>a.Price < 10000);
+            foreach(var item in items)
             {
-                
-                Console.WriteLine(test.Current());
-                Console.WriteLine(test.MoveNext());
+                Console.WriteLine($"Id {item.Id} FirstName {item.FirstName} LastName {item.LastName} Price {item.Price}");
             }
-
         }
-
-        public static int[] arr = { 1, 2,5555, 3,444, 4, 5, 6, 8 };
-        int Counter;
         
+    }
 
-        public object Current()
-        {
-                return arr[Counter];
-        }
-
-         public bool MoveNext()
-        {
-            if(Counter < arr.Length)
-            {
-                Counter++;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public void Reset()
-        {
-            Counter = -1;
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            return Program(arr);
-        }
+    class Emploer
+    {
+        public int Id;
+        public string FirstName;
+        public string LastName;
+        public double Price;
     }
 }
