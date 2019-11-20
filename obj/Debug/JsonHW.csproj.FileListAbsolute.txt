@@ -1,0 +1,10 @@
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\bin\Debug\JsonHW.exe.config
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\bin\Debug\JsonHW.exe
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\bin\Debug\JsonHW.pdb
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\obj\Debug\JsonHW.csprojAssemblyReference.cache
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\obj\Debug\JsonHW.csproj.CoreCompileInputs.cache
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\obj\Debug\JsonHW.exe
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\obj\Debug\JsonHW.pdb
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\bin\Debug\Newtonsoft.Json.dll
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\bin\Debug\Newtonsoft.Json.xml
+D:\Users\Vladik\source\repos\JsonHW\JsonHW\obj\Debug\JsonHW.csproj.CopyComplete
