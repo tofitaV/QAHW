@@ -1,53 +1,35 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MyApp
+namespace JsonHW
 {
-    class Program : IEnumerator, IEnumerable
+    class Program
     {
-        static void Main(string[] args)
+        static string uri = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY";
+        static void  Main(string[] args)
         {
-            Program test = new Program();
+            string JsonMassive = "";
 
-            for (int i = 0; i < arr.Length; i++)
+            HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
             {
-                
-                Console.WriteLine(test.Current());
-                Console.WriteLine(test.MoveNext());
+                JsonMassive = reader.ReadToEnd();
             }
-
-        }
-
-        public static int[] arr = { 1, 2,5555, 3,444, 4, 5, 6, 8 };
-        int Counter;
-        
-
-        public object Current()
-        {
-                return arr[Counter];
-        }
-
-         public bool MoveNext()
-        {
-            if(Counter < arr.Length)
+            JsonClass json = WorkWithInfo.ParseJson(JsonMassive);
+            Console.WriteLine(json.photos.First().camera.full_name);
+            foreach (var item in json.photos)
             {
-                Counter++;
-                return true;
+                Console.WriteLine("Id = " + item.id);
+              
+                Console.WriteLine("sol = " + item.sol);
             }
-            else
-            {
-                return false;
-            }
-        }
-
-        public void Reset()
-        {
-            Counter = -1;
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            return Program(arr);
         }
     }
 }

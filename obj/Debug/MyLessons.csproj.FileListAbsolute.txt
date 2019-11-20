@@ -1,7 +1,0 @@
-D:\Users\Vladik\source\repos\MyLessons\MyLessons\bin\Debug\MyLessons.exe.config
-D:\Users\Vladik\source\repos\MyLessons\MyLessons\bin\Debug\MyLessons.exe
-D:\Users\Vladik\source\repos\MyLessons\MyLessons\bin\Debug\MyLessons.pdb
-D:\Users\Vladik\source\repos\MyLessons\MyLessons\obj\Debug\MyLessons.csprojAssemblyReference.cache
-D:\Users\Vladik\source\repos\MyLessons\MyLessons\obj\Debug\MyLessons.csproj.CoreCompileInputs.cache
-D:\Users\Vladik\source\repos\MyLessons\MyLessons\obj\Debug\MyLessons.exe
-D:\Users\Vladik\source\repos\MyLessons\MyLessons\obj\Debug\MyLessons.pdb
